@@ -406,7 +406,7 @@ def _read_key_value_from_h5(f, d, key, key_write=None):
     def postprocess_reading(key, value):
         if value.ndim == 1 and len(value) == 1:
             value = value[0]
-        if value.dtype.kind == 'S':
+        if hasattr(value, 'dtype') and value.dtype.kind == 'S':
             value = value.astype(str)
             # backwards compat:
             # recover a dictionary that has been stored as a string
@@ -417,7 +417,8 @@ def _read_key_value_from_h5(f, d, key, key_write=None):
         if (key not in AnnData._H5_ALIASES['obs']
             and key not in AnnData._H5_ALIASES['var']
             and key != 'raw.var'
-            and not isinstance(value, dict) and value.dtype.names is not None):
+            and not isinstance(value, dict) 
+            and hasattr(value, 'dtype') and value.dtype.names is not None):
             new_dtype = [((dt[0], 'U{}'.format(int(int(dt[1][2:])/4)))
                           if dt[1][1] == 'S' else dt) for dt in value.dtype.descr]
             value = value.astype(new_dtype)
