@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 from pathlib import Path
 import versioneer
 
-package_name = 'anndata'
+package_name = 'anndata-modified'
 
 req_path = Path('requires.txt')
 if not req_path.is_file():
