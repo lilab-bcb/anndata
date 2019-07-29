@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 from pathlib import Path
-import versioneer
+#import versioneer
 
 package_name = 'anndata-modified'
 
@@ -15,11 +15,12 @@ with open('README.rst') as readme_f:
 
 setup(
     name=package_name,
-    version='0.6.4.post1',
+    version='0.6.4.post1'
+    #version=versioneer.get_version(),
     #cmdclass=versioneer.get_cmdclass(),
-    description='Forked package from anndata v0.6.4, with a bug fix on reading string features. This fix was done following anndata official repository, but was not added to v0.6.4.',
+    description='Forked package from anndata v0.6.4 (https://github.com/theislab/anndata), with a bug fix on reading string features. This fix was done following anndata official repository, but was not added to v0.6.4.',
     long_description=readme,
-    url='http://github.com/theislab/anndata',
+    url='https://github.com/lilab-bcb/anndata',
     author='Alex Wolf, Philipp Angerer',
     author_email='alex.wolf@helmholtz-muenchen.de',
     license='BSD-3-Clause',
