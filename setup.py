@@ -17,7 +17,7 @@ setup(
     name=package_name,
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-    description='An annotated data matrix.',
+    description='Annotated Matrix package based on anndata v0.6.4, with a minor bug fix following what anndata people has done',
     long_description=readme,
     url='http://github.com/theislab/anndata',
     author='Alex Wolf, Philipp Angerer',
