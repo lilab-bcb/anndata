@@ -15,7 +15,7 @@ with open('README.rst') as readme_f:
 
 setup(
     name=package_name,
-    version=versioneer.get_version(),
+    version='0.6.4.post1',
     cmdclass=versioneer.get_cmdclass(),
     description='Forked package from anndata v0.6.4, with a bug fix on reading string features. This fix was done following anndata official repository, but was not added to v0.6.4.',
     long_description=readme,
